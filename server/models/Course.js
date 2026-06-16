@@ -1,0 +1,23 @@
+import mongoose from 'mongoose'
+
+const courseSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+
+    colorTag: {
+        type: String,
+        default: '#F9DFDF'
+    },
+
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
+})
+
+const Course = mongoose.model('Course', courseSchema)
+export default Course
+
